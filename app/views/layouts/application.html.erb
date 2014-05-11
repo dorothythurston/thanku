@@ -7,15 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id='side-nav'>
   <% if signed_in? %>
     <%= link_to 'new', new_card_path %> |
     <%= link_to 'all', user_path(current_user) %> |
     <%= link_to 'sign out', session_path, method: :delete %> |
   <% else %>
     <%= link_to 'sign in', new_session_path %> | <%= link_to 'sign up', new_user_path %>
-  <% end %>
-
+  <% end %>   
+</div>
+<div id='outer-wrapper'>
+  <div id='main-content'>
   <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

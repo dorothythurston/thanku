@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'bourbon'
+gem 'neat'
 gem 'monban-generators'
 gem 'monban'
 gem 'rails', '4.0.3'

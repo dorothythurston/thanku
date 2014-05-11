@@ -1,0 +1,20 @@
+#outer-wrapper {
+  @include outer-container;
+
+  #side-nav {
+    @include span-columns(3);
+  }
+
+  #main-content {
+    @include span-columns(9);
+  }
+
+}
+
+a {
+  color: pink;
+
+  &:hover {
+    color: magenta;
+  }
+}
