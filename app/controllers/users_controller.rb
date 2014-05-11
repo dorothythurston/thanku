@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @card = @user.cards
+  end
+
   private
 
   def user_params

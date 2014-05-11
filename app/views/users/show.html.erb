@@ -1,0 +1,6 @@
+<h2>every thanku</h2>
+<ul>
+  <% @card.each do |card| %>
+    <li><%=  link_to card.recipient_name, card_path(card) %></li>
+  <% end %>
+</ul>
