@@ -1,6 +1,27 @@
-<h2>every thanku</h2>
+<%if current_user = @user%>
+  <h2>mine</h2>
+<% else %>
+  <h2><%= @user.name %>'s</h2>
+<% end %>
+
+<h3>sent:</h3>
 <ul>
   <% @card.each do |card| %>
     <li><%=  link_to card.recipient_name, card_path(card) %></li>
   <% end %>
 </ul>
+
+<h3>recieved:</h3>
+<% @recieved_cards.each do |card| %>
+  <div>
+    from: <%= link_to card.recipient_name, user_path(card.user) %>
+  </div>
+  <div>
+    <%= card.body %>
+  </div>
+  <div>
+    <%= image_tag card.image_url, width: 200 %>
+  </div>
+<% end %>
+
+
