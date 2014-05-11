@@ -16,6 +16,10 @@
 <h2>or sign up</h2>
 <%= form_for @user do |form| %>
   <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>

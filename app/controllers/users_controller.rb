@@ -19,12 +19,17 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @card = @user.cards
+    @recieved_cards = Card.where('recipient_email ilike ?', @user.email)
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(
+      :name,
+      :email,
+      :password
+    )
   end
 end
 
