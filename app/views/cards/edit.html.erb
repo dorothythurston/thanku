@@ -1,0 +1,22 @@
+<h2>edit a thanku</h2>
+<%= form_for @card do |f| %>
+  <div>
+    <%= f.text_field :recipient_name, placeholder: "to:" %>
+  </div>
+  <div>
+    <%= f.text_field :sender_name, placeholder: 'from:' %>
+  </div>
+  <div>
+    <%= f.url_field :image_url, placeholder: 'add an image from a url' %>
+  </div>
+  <div>
+    <%= f.text_area :body, placeholder: 'add a personal message' %>
+  </div>
+  <div>
+    <%= f.email_field :recipient_email, placeholder: 'their email address' %>
+  </div>
+  <div>
+    <%= f.email_field :sender_email, value: current_user.email %>
+  </div>
+  <%= f.submit 'update' %>
+<% end %>
