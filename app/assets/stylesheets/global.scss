@@ -3,12 +3,31 @@
 
   #side-nav {
     @include span-columns(3);
+    background-color: #F0F1F0;
+    border-radius: 10px;
+    padding: 15px
   }
 
   #main-content {
     @include span-columns(9);
+    background-color: #F0F1F0;
+    border-radius: 10px;
+    padding: 15px
   }
 
+  #card {
+    @include span-columns(3);
+    background-color: #feb6c1;
+    border-radius: 10px;
+    padding: 15px
+  }
+
+  #sent {
+    @include span-columns(3);
+    background-color: #ec929b;
+    border-radius: 10px;
+    padding: 15px
+  }
 }
 
 a {
