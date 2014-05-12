@@ -1,6 +1,10 @@
 class CardsController < ApplicationController
   respond_to :html
 
+  def index
+    @cards = Card.all
+  end
+
   def new
     @card = Card.new
   end

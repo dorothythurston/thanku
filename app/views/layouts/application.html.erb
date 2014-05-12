@@ -13,11 +13,15 @@
       <h2>thanku</h2>
     </div>
     <% if signed_in? %>
+        signed in as: <%= link_to current_user.email, user_path(current_user) %>
       <div>
         <%= link_to 'new', new_card_path %>
       </div>
       <div>
-        <%= link_to 'all', user_path(current_user) %>
+        <%= link_to 'all', cards_path %>
+      </div>
+      <div>
+        <%= link_to 'mine', user_path(current_user) %>
       </div>
       <div>
         <%= link_to 'sign out', session_path, method: :delete %>
