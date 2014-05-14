@@ -1,0 +1,11 @@
+<div id='card'>
+  <h4> to: <%= card.recipient_name %></h4>
+  <h4> from: <%= link_to card.sender_name, card.user %></h4>
+  <%= image_tag card.image_url, width: 100 %>
+  <%= card.body %>
+  <div>
+    <% if current_user == card.user %>
+      <%= link_to 'edit', edit_card_path(card) %>
+    <% end %>
+  </div>
+</div>

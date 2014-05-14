@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
+  before_filter :require_login
 
   def new
     @user = User.new
@@ -18,8 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @card = @user.cards
-    @recieved_cards = Card.where('recipient_email ilike ?', @user.email)
+    @cards = Card.where('recipient_email ilike ?', current_user.email)
   end
 
   private

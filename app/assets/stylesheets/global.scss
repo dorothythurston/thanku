@@ -1,23 +1,44 @@
 #outer-wrapper {
   @include outer-container;
 
-  #side-nav {
-    @include span-columns(3);
+  #logo {
+    @include span-columns(2);
+    float: left;
+    padding: 15px;
+  }
+
+  #nav {
+    @include span-columns(9);
     background-color: #F0F1F0;
     border-radius: 10px;
-    padding: 15px
+    float: right;
+    padding: 15px;
+
+    .nav-link {
+      @include span-columns(1);
+      background-color: #FFFFFF;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    #sign-in {
+      @include span-columns(3);
+      text-align: center;
+    }
   }
 
   #main-content {
-    @include span-columns(9);
+    @include span-columns(12);
+    margin: 5px;
     background-color: #F0F1F0;
     border-radius: 10px;
     padding: 15px
   }
 
   #card {
-    @include span-columns(3);
-    background-color: #feb6c1;
+    @include span-columns(2);
+    background-color: #fefed8;
     border-radius: 10px;
     padding: 15px;
     margin-top:2px
@@ -32,7 +53,7 @@
 }
 
 a {
-  color: pink;
+  color: #feb6c1;
 
   &:hover {
     color: magenta;

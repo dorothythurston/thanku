@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Thankyou</title>
+  <title>thanku</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id= 'outer-wrapper'>
-  <div id='side-nav'>
-    <div id='logo'>
-      <h2>thanku</h2>
-    </div>
+  <div id='logo'>
+  <h1><%= link_to 'thanku', root_path %></h1>
+  </div>
+  <div id='nav'>
     <% if signed_in? %>
-        signed in as: <%= link_to current_user.email, user_path(current_user) %>
-      <div>
+      <p class='nav-link'>
         <%= link_to 'new', new_card_path %>
-      </div>
-      <div>
+      </p>
+      <p class='nav-link'>
         <%= link_to 'all', cards_path %>
-      </div>
-      <div>
+      </p>
+      <p class='nav-link'>
         <%= link_to 'mine', user_path(current_user) %>
-      </div>
-      <div>
+      </p>
+      <p class='nav-link'>
+        <%= link_to 'sent', sent_path(current_user) %>
+      </p>
+      <div id='sign-in'>
+        <%= link_to current_user.email, user_path(current_user) %> |
         <%= link_to 'sign out', session_path, method: :delete %>
       </div>
     <% else %>
