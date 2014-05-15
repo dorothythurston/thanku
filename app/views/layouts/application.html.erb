@@ -32,6 +32,12 @@
     <% else %>
       <%= link_to 'sign in', new_session_path %> | <%= link_to 'sign up', new_user_path %>
     <% end %>
+    <div id='search'>
+      <%= form_for(:search, url: search_path, method: :get) do |form| %>
+        <%= form.text_field :query, placeholder: "search here" %>
+        <%= form.submit "search" %>
+      <% end %>
+    </div>
   </div>
   <div id='outer-wrapper'>
     <div id='main-content'>

@@ -1,0 +1,5 @@
+<div id='search-results'>
+  <h3>
+    <%= link_to user.name, user %>
+  </h3>
+</div>
