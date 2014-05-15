@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @cards = Card.where('recipient_email ilike ?', current_user.email)
+    @cards = Card.where('recipient_email ilike ?', @user.email)
   end
 
   private

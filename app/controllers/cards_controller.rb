@@ -13,7 +13,12 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.create(card_params)
-    redirect_to @card
+    @recipient = find_recipient
+    if @card.save(card_params)
+      redirect_to @card
+    else
+      render :new
+    end
   end
 
   def show
@@ -40,6 +45,10 @@ class CardsController < ApplicationController
 
   def find_card
     Card.find(params[:id])
+  end
+
+  def find_recipient
+    User.find_by_email(params[:card][:recipient_email]) || Guest.new
   end
 
   def card_params

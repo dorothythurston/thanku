@@ -1,5 +1,6 @@
 <h2>edit a thanku</h2>
 <%= form_for @card do |f| %>
+<%= render 'cards/error_messages', card: f.object %>
   <div>
     <%= f.text_field :recipient_name, placeholder: "to:" %>
   </div>

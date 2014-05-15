@@ -1,22 +1,23 @@
 <h2>make a new card</h2>
-<%= form_for @card do |f| %>
+<%= form_for @card do |form| %>
+  <%= render 'cards/error_messages', card: form.object %>
   <div>
-    <%= f.text_field :recipient_name, placeholder: "to:", value: @recipient.name %>
+    <%= form.text_field :recipient_name, placeholder: "to:", value: @recipient.name %>
   </div>
   <div>
-    <%= f.text_field :sender_name, placeholder: 'from:' %>
+    <%= form.text_field :sender_name, placeholder: 'from:' %>
   </div>
   <div>
-    <%= f.url_field :image_url, placeholder: 'add an image from a url' %>
+    <%= form.url_field :image_url, placeholder: 'add an image from a url' %>
   </div>
   <div>
-    <%= f.text_area :body, placeholder: 'add a personal message' %>
+    <%= form.text_area :body, placeholder: 'add a personal message' %>
   </div>
   <div>
-    <%= f.email_field :recipient_email, placeholder: 'their email address', value: @recipient.email %>
+    <%= form.email_field :recipient_email, placeholder: 'their email address', value: @recipient.email %>
   </div>
   <div>
-    <%= f.email_field :sender_email, value: current_user.email %>
+    <%= form.email_field :sender_email, value: current_user.email %>
   </div>
-  <%= f.submit 'create card' %>
+  <%= form.submit 'create card' %>
 <% end %>
