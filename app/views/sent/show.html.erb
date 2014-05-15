@@ -1,4 +1,6 @@
 <h3>sent</h3>
-<% @cards.each do |card| %>
-  <%= render card %>
+<% if @cards.empty? %>
+  <%= link_to 'send a thanku', new_card_path %>
+<% else %>
+  <%= render @cards %>
 <% end %>

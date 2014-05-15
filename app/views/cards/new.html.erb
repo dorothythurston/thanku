@@ -1,7 +1,7 @@
 <h2>make a new card</h2>
 <%= form_for @card do |f| %>
   <div>
-    <%= f.text_field :recipient_name, placeholder: "to:" %>
+    <%= f.text_field :recipient_name, placeholder: "to:", value: @recipient.name %>
   </div>
   <div>
     <%= f.text_field :sender_name, placeholder: 'from:' %>
@@ -13,7 +13,7 @@
     <%= f.text_area :body, placeholder: 'add a personal message' %>
   </div>
   <div>
-    <%= f.email_field :recipient_email, placeholder: 'their email address' %>
+    <%= f.email_field :recipient_email, placeholder: 'their email address', value: @recipient.email %>
   </div>
   <div>
     <%= f.email_field :sender_email, value: current_user.email %>

@@ -86,10 +86,21 @@ select {
 
 button,
 input[type="submit"] {
-  @extend %button;
-  @include appearance(none);
-  cursor: pointer;
+  border: 0;
+  background: pink;
+  color: white;
+  border-radius: 6px;
+  padding: 5px;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  border-top: 1px solid #fefefe ;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid #fefefe ;
+
+  &:hover {
+    background: #ec3b83;
+    cursor: pointer;
+  }
 }

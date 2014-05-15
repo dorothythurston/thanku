@@ -1,7 +1,7 @@
 <div id='card'>
-  <h5> to: <%= card.recipient_name %></h5>
-  <h5> from: <%= link_to card.sender_name, card.user %></h5>
-  <%= image_tag card.image_url, width: 100 %>
+  <p> to: <%= recipient_name_or_link(card.recipient_email, card.recipient_name) %></p>
+  <p> from: <%= link_to card.sender_name, card.user %></p>
+  <%= image_tag card.image_url, width: 25 %>
   <%= card.body %>
   <div>
     <% if current_user == card.user %>

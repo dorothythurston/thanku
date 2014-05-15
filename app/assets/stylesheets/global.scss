@@ -28,7 +28,15 @@
     }
 
     #search {
-      @include span-columns(3);
+      @include span-columns(4);
+
+      input {
+        display: inline-block;
+      }
+
+      input[type=text] {
+        width: 50%;
+      }
     }
   }
 
@@ -42,10 +50,14 @@
 
   #card {
     @include span-columns(2);
-    background-color: #fefed8;
+    background-color: #AFEEEE;
     border-radius: 10px;
     padding: 15px;
-    margin-top:2px
+    margin-top:2px;
+    border-bottom:thick dotted #898989;
+    border-top:thick dotted #898989;
+    border-left:thick dotted #898989;
+    border-right:thick dotted #898989;
   }
 
   #sent {
@@ -57,7 +69,7 @@
 }
 
 a {
-  color: #feb6c1;
+  color: #FF82AB;
 
   &:hover {
     color: magenta;

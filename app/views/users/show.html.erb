@@ -1,15 +1,17 @@
 <%if current_user == @user%>
   <h2>mine</h2>
 <% else %>
-  <h2><%= @user.name %>'s</h2>
+  <h2><%= link_to @user.name, new_card_path(recipient_id: @user.id) %>'s</h2>
 <% end %>
 
 <%if @cards.empty? %>
-  <%= link_to 'send and ye shall recieve', new_card_path %>
-<% else %>
-  <% @cards.each do |card| %>
-    <%= render card %>
+  <%if current_user == @user %>
+    <%= link_to 'send and ye shall recieve', new_card_path %>
+  <% else %>
+    <%= link_to 'send them a thanku', new_card_path(recipient_id: @user.id) %>
   <% end %>
+<% else %>
+    <%= render @cards %>
 <% end %>
 
 

@@ -8,6 +8,7 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
+    @recipient = User.find_by_id(params[:recipient_id]) || Guest.new
   end
 
   def create
@@ -27,6 +28,12 @@ class CardsController < ApplicationController
     @card = find_card
     @card.update(card_params)
     respond_with @card
+  end
+
+  def destroy
+    @card = find_card
+    @card.destroy
+    redirect_to dashboard_path
   end
 
   private

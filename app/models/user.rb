@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   def recieved_cards
     Card.where('recipient_email ilike ?', email)
   end
+
+  def guest?
+    false
+  end
 end
